@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const ctrl = require("./auth.ctrl");
-const passport = require("../../passport");
+const passport = require("passport");
 /**
  * @route GET /auth/join
  * @description 회원가입
