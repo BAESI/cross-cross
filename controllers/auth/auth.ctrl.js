@@ -42,3 +42,8 @@ exports.post_login = async (req, res, next) => {
   // 로그인 성공시 메인 페이지로 이동
   return res.send('<script>alert("로그인에 성공하였습니다.");location.href="/";</script>');
 };
+
+exports.get_logout = async (req, res, next) => {
+  req.logout();
+  return res.redirect("/auth/login");
+};

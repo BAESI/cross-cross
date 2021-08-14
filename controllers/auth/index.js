@@ -33,4 +33,10 @@ router.post(
   ctrl.post_login
 );
 
+/**
+ * @route GET /auth/logout
+ * @description 로그아웃 후 로그인페이지로 이동
+ */
+router.get("/logout", ctrl.get_logout);
+
 module.exports = router;
