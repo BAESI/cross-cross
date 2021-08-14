@@ -13,9 +13,9 @@
 /*!*******************************!*\
   !*** ./assets/js/calendar.js ***!
   \*******************************/
-/***/ (() => {
+/***/ (function() {
 
-eval("\n\n//# sourceURL=webpack://croos-croos/./assets/js/calendar.js?");
+eval("var _this = this;\n\nvar target = document.getElementsByClassName('activation')[0];\nvar appear = document.getElementsByClassName('content-list')[0];\nvar disappear = document.getElementsByClassName('register-button')[0];\nvar contents = appear.getElementsByClassName('contents');\nconsole.dir(contents);\nvar flag = false;\n\nvar incomming = function incomming(e) {\n  if (!flag) {\n    disappear.style.display = 'none';\n    appear.style.transform = 'translateX(0)';\n    flag = true;\n  } else {\n    flag = false;\n    appear.style.transform = 'translateX(600px)';\n    setTimeout(function () {\n      return disappear.style.display = 'flex';\n    }, 500);\n  }\n};\n\ntarget.addEventListener('click', incomming);\n\nfor (var i = 0; i < contents.length; i++) {\n  console.log(contents[i]);\n  contents[i].addEventListener('click', function (e) {\n    for (var j = 0; j < contents.length; j++) {\n      if (contents[j].style.border != '1px solid black') {\n        contents[j].style.border = '1px solid black';\n      }\n    }\n\n    console.log(_this);\n\n    if (e.target.className == 'contents') {\n      e.target.style.border = '3px solid blue';\n    }\n\n    console.dir(e.target);\n  }, false);\n}\n\n//# sourceURL=webpack://croos-croos/./assets/js/calendar.js?");
 
 /***/ }),
 
@@ -3287,7 +3287,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
