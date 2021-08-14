@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app",
-    "dev:server": "nodemon --exec babel-node app.js --delay 0.5",
+    "dev:server": "nodemon --exec babel-node server.js --delay 0.5",
     "dev:assets": "WEBPACK_ENV=development webpack -w"
   },
   "repository": {
@@ -46,6 +46,7 @@
     "sass-loader": "^11.0.1",
     "sequelize": "^6.6.5",
     "sequelize-cli": "^6.2.0",
+    "socket.io": "^4.1.3",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0"
   },

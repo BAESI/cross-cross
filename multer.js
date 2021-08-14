@@ -2,13 +2,23 @@ const path = require("path");
 const multer = require("multer");
 const uploadDir = path.join(__dirname, "./assets/image");
 
-const storage = multer.diskStorage({
+const profileStorage = multer.diskStorage({
   destination: (req, file, done) => {
     done(null, uploadDir);
   },
   filename: (req, file, done) => {
     const extension = file.mimetype.split("/")[1];
     done(null, "profile-" + Date.now() + "." + extension);
+  },
+});
+
+const messageStroage = multer.diskStorage({
+  destination: (req, file, done) => {
+    done(null, uploadDir);
+  },
+  filename: (req, file, done) => {
+    const extension = file.mimetype.split("/")[1];
+    done(null, "message-" + Date.now() + "." + extension);
   },
 });
 
@@ -21,4 +31,5 @@ const fileFilter = (req, file, done) => {
   }
 };
 
-exports.profileUpload = multer({ storage, fileFilter });
+exports.profileUpload = multer({ profileStorage, fileFilter });
+exports.messageUpload = multer({ messageStroage, fileFilter });

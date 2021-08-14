@@ -60,7 +60,7 @@ exports.post_post_write = async (req, res, next) => {
   }
   req.body.brokerId = req.user.id;
   const post = await model.Post.create(req.body);
-  return res.send('<script>alert("글 작성에 성공하였습니다.");location.href="/post/calendar";</script>');
+  return res.send('<script>alert("글 작성에 성공하였습니다.");location.href="/post";</script>');
 };
 
 exports.get_post = async (req, res, next) => {

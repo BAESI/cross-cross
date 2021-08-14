@@ -32,8 +32,10 @@ const sessionOption = {
   secret: process.env.COOKIE_SECRET,
   cookie: { httpOnly: true, secure: false },
 };
-app.use(cookieParser());
-app.use(session(sessionOption));
+const sessionMiddleWare = session(sessionOption);
+
+app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(sessionMiddleWare);
 app.use(passport.initialize());
 app.use(passport.session());
 // middleware setting
@@ -53,9 +55,12 @@ const middleware = require("./middlewares/auth");
 const authRouter = require("./controllers/auth");
 const userRouter = require("./controllers/user");
 const postRouter = require("./controllers/post");
+const chatRouter = require("./controllers/chat");
+
 app.use("/auth", authRouter);
 app.use("/user", middleware.isAuthenticated, userRouter);
 app.use("/post", middleware.isAuthenticated, postRouter);
+app.use("/chat", middleware.isAuthenticated, chatRouter);
 
 // 404
 app.use((req, res, next) => {
@@ -70,6 +75,4 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ success: false, message: err.message });
 });
 
-app.listen(app.get("port"), () => {
-  console.log(app.get("port"), "번 포트에서 서버를 시작합니다!");
-});
+module.exports = app;
