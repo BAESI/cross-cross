@@ -11,9 +11,9 @@ block content
             a(href="http://localhost:4001/auth/login")
                 button.join-backward 뒤로가기
             form(action="http://localhost:4001/auth/join", method="post").join-form
-                input(type='email' placeholder='이메일' name="email")
-                input(type='text' placeholder='닉네임' name="nickname")
-                input(type='password' placeholder='비밀번호' name="password")
-                input(type='password' placeholder='비밀번호 확인' name="passwordConfirm")
+                input(type='email' name ='email' placeholder='이메일')
+                input(type='text' name='nickname' placeholder='닉네임')
+                input(type='password' name='password' placeholder='비밀번호')
+                input(type='password' name ='passwordConfirm'placeholder='비밀번호 확인')
                 input(type='submit' placeholder="회원가입")
     script(src="../static/login.js")
