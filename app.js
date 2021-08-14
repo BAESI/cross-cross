@@ -8,10 +8,12 @@ const flash = require("connect-flash");
 dotenv.config();
 
 const { sequelize } = require("./models");
+const passportConfig = require("./passport");
 
 // app set
 const app = express();
 app.set("port", process.env.PORT || 4001);
+passportConfig();
 
 // sequelize init
 sequelize
@@ -47,10 +49,14 @@ app.use("/favicon.ico", (req, res) => {
   res.status(204);
 });
 
+const middleware = require("./middlewares/auth");
+
 const authRouter = require("./controllers/auth");
 const userRouter = require("./controllers/user");
+const postRouter = require("./controllers/post");
 app.use("/auth", authRouter);
-app.use("/user", userRouter);
+app.use("/user", middleware.isAuthenticated, userRouter);
+app.use("/post", middleware.isAuthenticated, postRouter);
 
 // 404
 app.use((req, res, next) => {
