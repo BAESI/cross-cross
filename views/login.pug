@@ -2,7 +2,15 @@ extends ./layout/main
 
 
 block content
+    canvas#login-bg
     main.main-login
         .login-main_column
             .login-img_container
-                img.login-logo(src="../static/dummy.svg") 
+                img.login-logo(src="../static/cross-cross.svg")
+            form(action="", method="get").login-form
+                input(type='email' placeholder='이메일')
+                input(type='password' placeholder='비밀번호')
+                input(type='submit' value='로그인')
+            a.signUp-link(href='')
+                button 회원가입
+    script(src="../static/login.js")

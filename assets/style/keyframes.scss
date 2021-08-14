@@ -1,0 +1,14 @@
+@import 'config.scss';
+@keyframes viewPortOpening {
+	0% {
+		opacity: 0;
+		transform: translateX(150px);
+	}
+	60% {
+		opacity: 1;
+		transform: translateX(-40px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}

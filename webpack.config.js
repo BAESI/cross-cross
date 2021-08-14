@@ -12,7 +12,10 @@ const OUTPUT_DIR = path.join(__dirname, 'static');
 // entry : [modesty/artifator , ENTRY_FILE ]
 
 const config = {
-	entry: ['@babel/polyfill', ENTRY_FILE],
+	entry: {
+		main: ['@babel/polyfill', ENTRY_FILE],
+		login: ['@babel/polyfill', path.resolve(__dirname, 'assets', 'js', 'login.js')]
+	},
 	mode: MODE,
 	//giving rules, [array]
 	module: {

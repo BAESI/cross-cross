@@ -35,6 +35,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 // middleware setting
 app.set('view engine', 'pug');
+app.use('/static', express.static('static'));
+
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
