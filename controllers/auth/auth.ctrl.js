@@ -1,5 +1,6 @@
 const model = require("../../models");
 const bcrypt = require("bcrypt");
+const passport = require("passport");
 
 exports.get_join = (req, res, next) => {
   return res.render("join.pug", {
@@ -14,7 +15,7 @@ exports.post_join = async (req, res, next) => {
     if (existEmail) {
       return res.send('<script>alert("이미 존재하는 이메일 입니다.");</script>');
     }
-    const existNickName = await model.User.findOne({ where: { nickName } });
+    const existNickName = await model.User.findOne({ where: { nickname } });
     if (existNickName) {
       return res.send('<script>alert("이미 존재하는 닉네임입니다.");</script>');
     }
@@ -29,7 +30,7 @@ exports.post_join = async (req, res, next) => {
         password: hash,
       });
       // user는 로그인 이메일칸에 들어갈 예정
-      return res.send('<script>alert("회원가입에 성공하였습니다."); location.href="/auth/login";</script>', user);
+      return res.send('<script>alert("회원가입에 성공하였습니다.");location.href="/auth/login";</script>');
     }
   } catch (e) {
     return next(e);
@@ -37,12 +38,27 @@ exports.post_join = async (req, res, next) => {
 };
 
 exports.get_login = (req, res, next) => {
-  return res.render("login", { flashMessage: req.flash().error, pageTitle: "login" });
+  return res.render("login.pug", {
+    pageTitle: "login",
+  });
 };
 
 exports.post_login = async (req, res, next) => {
   // 로그인 성공시 메인 페이지로 이동
-  return res.send('<script>alert("로그인에 성공하였습니다.");location.href="/";</script>');
+  passport.authenticate("local", { session: false }, (authError, user, info) => {
+    if (authError) {
+      return next(authError);
+    }
+    if (!user) {
+      return res.send(`<script>alert(${info.message});location.href="/";</script>`);
+    }
+    return req.login(user, (loginError) => {
+      if (loginError) {
+        return next(loginError);
+      }
+      return res.send('<script>alert("로그인에 성공하였습니다.");location.href="/";</script>');
+    });
+  });
 };
 
 exports.get_logout = async (req, res, next) => {
