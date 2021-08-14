@@ -189,15 +189,17 @@ header {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background: linear-gradient(#fdce8f, transparent); }
   .main-join .join-main_column {
-    background: #fdce8f;
+    background: whitesmoke;
     justify-content: space-around;
     border-radius: 20px;
     display: flex;
     height: 60%;
     align-items: center;
-    width: 40%; }
+    width: 40%;
+    margin-bottom: 30px; }
     .main-join .join-main_column button {
       width: 100px;
       height: 100px;
