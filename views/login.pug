@@ -10,7 +10,7 @@ block content
             form(action="http://localhost:4001/auth/login", method="post").login-form
                 input(type='email' placeholder='이메일' name="email")
                 input(type='password' placeholder='비밀번호' name="password")
-                input(type='submit' name='로그인')
+                input(type='submit' value='로그인')
             a.signUp-link(href='http://localhost:4001/auth/join')
                 button 회원가입
     script(src="../static/login.js")

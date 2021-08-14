@@ -3,7 +3,6 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const session = require("express-session");
 const passport = require("passport");
-const flash = require("connect-flash");
 
 dotenv.config();
 
@@ -17,7 +16,7 @@ passportConfig();
 
 // sequelize init
 sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {
     console.log("정상적으로 데이터베이스에 연결되었습니다.");
   })
@@ -40,8 +39,7 @@ app.set("view engine", "pug");
 app.use("/static", express.static("static"));
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(flash());
+app.use(express.urlencoded({ extended: true }));
 
 // router
 app.use("/favicon.ico", (req, res) => {

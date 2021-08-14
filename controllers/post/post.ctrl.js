@@ -20,12 +20,18 @@ exports.get_post_calendar = async (req, res, next) => {
   // TODO: post가 어떻게 나오는지 찍어보고 날짜별로 카운트 넣어줌
 };
 
-exports.post_post = async (req, res, next) => {
+exports.get_post_write = async (req, res, next) => {
+  return res.render("write.pug", {
+    pageTitle: "write",
+  });
+};
+
+exports.post_post_write = async (req, res, next) => {
   const { startDate, endDate } = req.body;
   if (startDate > endDate) {
     return res.send('<script>alert("예상출발시간은 예상도착시간보다 항상 이전이어야합니다.");</script>');
   }
   req.body.brokerId = req.user.id;
   const post = await model.Post.create(req.body);
-  return res.render("post/write.pug", post);
+  return res.send('<script>alert("글 작성에 성공하였습니다.");location.href="/post/calendar";</script>');
 };
