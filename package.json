@@ -1,34 +1,50 @@
 {
-  "name": "croos-croos",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Yooncoding/croos-croos.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Yooncoding/croos-croos/issues"
-  },
-  "homepage": "https://github.com/Yooncoding/croos-croos#readme",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.2",
-    "morgan": "^1.10.0",
-    "mysql2": "^2.3.0",
-    "pug": "^3.0.2",
-    "sequelize": "^6.6.5",
-    "sequelize-cli": "^6.2.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  }
+	"name": "croos-croos",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon app",
+		"dev:server": "nodemon --exec babel-node init.js --delay 0.5",
+		"dev:assets": "WEBPACK_ENV=development webpack -w"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Yooncoding/croos-croos.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Yooncoding/croos-croos/issues"
+	},
+	"homepage": "https://github.com/Yooncoding/croos-croos#readme",
+	"dependencies": {
+		"@babel/core": "^7.13.14",
+		"@babel/node": "^7.13.13",
+		"@babel/polyfill": "^7.12.1",
+		"@babel/preset-env": "^7.13.12",
+		"autoprefixer": "^10.2.5",
+		"babel-loader": "^8.2.2",
+		"babel-node": "^0.0.1-security",
+		"css-loader": "^5.2.4",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"express-session": "^1.17.2",
+		"mini-css-extract-plugin": "^1.6.0",
+		"morgan": "^1.10.0",
+		"mysql2": "^2.3.0",
+		"node-sass": "^5.0.0",
+		"postcss-loader": "^6.1.1",
+		"pug": "^3.0.2",
+		"sass-loader": "^11.0.1",
+		"sequelize": "^6.6.5",
+		"sequelize-cli": "^6.2.0",
+		"webpack": "^5.36.2",
+		"webpack-cli": "^4.6.0"
+	},
+	"devDependencies": {
+		"file-loader": "^6.2.0",
+		"nodemon": "^2.0.12"
+	}
 }
