@@ -1,0 +1,48 @@
+header
+    .nav-image_container
+        a(href = 'http://localhost:4001/auth/login')
+            img.nav-logo(src='../../static/cross-cross.svg')
+    ul.icon_container
+        li <i class="fas fa-adjust"></i>
+        li <i class="fas fa-adjust"></i>
+        li <i class="fas fa-adjust"></i>
+        li <i class="fas fa-adjust"></i>
+    
+  
+//-   script.
+//-     window.onload = () =>{
+//-       const menu = document.getElementsByClassName('menuList')[0];
+//-       const logout = document.getElementsByClassName('logOut')[0];
+//-       const progress = document.getElementsByClassName('loading')[0];
+//-       const profile = document.getElementsByClassName('profile')[0];
+
+//-       const listMenu = (e) => {
+//-         logout.style.display = 'block';
+//-         logout.style.opacity = '1';
+
+//-         progress.style.display = 'block';
+//-         progress.style.opacity = '1';
+
+//-         profile.style.display = 'block';
+//-         profile.style.opacity = '1';
+
+//-         /*
+//-         menu.style.boxShadow = '1px 2px 3px grey';
+//-         menu.style.backgroundColor = "#7b69ee";
+//-         menu.style.color = '#f9f9f9';
+//-         menu.style.border-color= 'black';
+//-         */
+//-       };
+
+//-       const disableMenu = e =>{
+//-         logout.style.opacity = '0';
+//-         progress.style.opacity = '0';
+//-         profile.style.opacity = '0';
+//-       }
+//-       const init = () =>{
+//-         menu.addEventListener('mouseenter', listMenu);
+//-         menu.addEventListener('mouseleave', disableMenu);
+//-       }
+
+//-       init();
+//-     }

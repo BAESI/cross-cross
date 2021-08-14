@@ -37,7 +37,7 @@ exports.post_join = async (req, res, next) => {
 };
 
 exports.get_login = (req, res, next) => {
-	return res.render('login', { flashMessage: req.flash().error, pageTitle: 'login' });
+	return res.render('core', { flashMessage: req.flash().error, pageTitle: 'login' });
 };
 
 exports.post_login = async (req, res, next) => {

@@ -20,7 +20,6 @@ const letters = document.getElementsByTagName('g');
 window.addEventListener('mousemove', (e) => {
 	mouse.x = e.x;
 	mouse.y = e.y;
-	console.log(mouse);
 });
 class Particle {
 	constructor(x, y) {
