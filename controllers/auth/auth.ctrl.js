@@ -2,7 +2,9 @@ const model = require('../../models');
 const bcrypt = require('bcrypt');
 
 exports.get_join = (req, res, next) => {
-	return res.render('auth/join.pug');
+	return res.render('join.pug', {
+		pageTitle: 'join'
+	});
 };
 
 exports.post_join = async (req, res, next) => {
@@ -35,7 +37,7 @@ exports.post_join = async (req, res, next) => {
 };
 
 exports.get_login = (req, res, next) => {
-	return res.render('login', { flashMessage: req.flash().error });
+	return res.render('login', { flashMessage: req.flash().error, pageTitle: 'login' });
 };
 
 exports.post_login = async (req, res, next) => {

@@ -36,6 +36,9 @@
 				border: none;
 				background-color: gainsboro;
 				text-align: center;
+				&:focus {
+					outline: none;
+				}
 				&:hover {
 					background-color: white;
 				}
