@@ -12,8 +12,8 @@ exports.post_join = async (req, res, next) => {
     if (existEmail) {
       return res.send('<script>alert("이미 존재하는 이메일 입니다.");</script>');
     }
-    const nickName = await model.User.findOne({ where: { nickName } });
-    if (nickName) {
+    const existNickName = await model.User.findOne({ where: { nickName } });
+    if (existNickName) {
       return res.send('<script>alert("이미 존재하는 닉네임입니다.");</script>');
     }
     if (password !== passwordConfirm) {
@@ -27,7 +27,7 @@ exports.post_join = async (req, res, next) => {
         password: hash,
       });
       // user는 로그인 이메일칸에 들어갈 예정
-      res.send('<script>alert("회원가입에 성공하였습니다."); location.href="/auth/login";</script>', user);
+      return res.send('<script>alert("회원가입에 성공하였습니다."); location.href="/auth/login";</script>', user);
     }
   } catch (e) {
     return next(e);

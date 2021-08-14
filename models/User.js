@@ -28,6 +28,11 @@ module.exports = class User extends Sequelize.Model {
           allowNull: false,
           defaultValue: 0,
         },
+        profileImage: {
+          type: Sequelize.TEXT,
+          allowNull: false,
+          defaultValue: "profile-default.png",
+        },
       },
       {
         sequelize,
