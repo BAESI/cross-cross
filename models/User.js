@@ -23,6 +23,16 @@ module.exports = class User extends Sequelize.Model {
           allowNull: false,
           unique: true,
         },
+        point: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          defaultValue: 0,
+        },
+        profileImage: {
+          type: Sequelize.TEXT,
+          allowNull: false,
+          defaultValue: "profile-default.png",
+        },
       },
       {
         sequelize,
@@ -36,5 +46,7 @@ module.exports = class User extends Sequelize.Model {
       }
     );
   }
-  static associate(db) {}
+  static associate(db) {
+    db.User.hasMany(db.Post, { foreignKey: "brokerId", sourceKey: "id" });
+  }
 };

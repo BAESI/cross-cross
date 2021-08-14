@@ -11,9 +11,15 @@ block content
             .login-img_container
                 img.login-logo(src="../static/cross-cross.svg")
             form(action="http://localhost:4001/auth/login", method="post").login-form
+<<<<<<< HEAD
                 input(type='email' placeholder='이메일')
                 input(type='password' placeholder='비밀번호')
                 input(type='submit' value='로그인')
+=======
+                input(type='email' placeholder='이메일' name="email")
+                input(type='password' placeholder='비밀번호' name="password")
+                input(type='submit' name='로그인')
+>>>>>>> 2a751f69ff0272fc93f0aec022401e744e8004b9
             a.signUp-link(href='http://localhost:4001/auth/join')
                 button 회원가입
     script(src="../static/login.js")
