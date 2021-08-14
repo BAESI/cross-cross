@@ -3,6 +3,12 @@ const router = Router();
 const ctrl = require("./post.ctrl");
 
 /**
+ * @route GET /post
+ * @description demo 버전
+ */
+router.get("/", ctrl.get_post);
+
+/**
  * @route GET /post/calendar?month&year
  * @description 캘린더 해당 년월 첫날짜와 마지막날짜 불러오기
  */
