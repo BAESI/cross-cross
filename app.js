@@ -11,7 +11,7 @@ const { sequelize } = require("./models");
 
 // app set
 const app = express();
-app.set("port", process.env.PORT || 4000);
+app.set("port", process.env.PORT || 4001);
 
 // sequelize init
 sequelize
@@ -49,7 +49,9 @@ app.use("/favicon.ico", (req, res) => {
 });
 
 const authRouter = require("./controllers/auth");
+const userRouter = require("./controllers/user");
 app.use("/auth", authRouter);
+app.use("/user", userRouter);
 
 // 404
 app.use((req, res, next) => {

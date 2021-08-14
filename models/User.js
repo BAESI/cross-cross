@@ -23,6 +23,11 @@ module.exports = class User extends Sequelize.Model {
           allowNull: false,
           unique: true,
         },
+        point: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          defaultValue: 0,
+        },
       },
       {
         sequelize,
