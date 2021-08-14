@@ -24,7 +24,6 @@ module.exports = () => {
             done(null, false, { message: "존재하지 않는 이메일입니다." });
           }
         } catch (e) {
-          console.log(5);
           done(e);
         }
       }

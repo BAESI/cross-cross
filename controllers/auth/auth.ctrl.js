@@ -58,7 +58,7 @@ exports.post_login = async (req, res, next) => {
         console.error(loginError);
         return next(loginError);
       }
-      return res.redirect("/post/calendar");
+      return res.redirect("/post");
     });
   })(req, res, next);
 };

@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const session = require("express-session");
+const cookieParser = require("cookie-parser");
 const passport = require("passport");
 
 dotenv.config();
@@ -31,6 +32,7 @@ const sessionOption = {
   secret: process.env.COOKIE_SECRET,
   cookie: { httpOnly: true, secure: false },
 };
+app.use(cookieParser());
 app.use(session(sessionOption));
 app.use(passport.initialize());
 app.use(passport.session());

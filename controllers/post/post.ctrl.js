@@ -62,3 +62,9 @@ exports.post_post_write = async (req, res, next) => {
   const post = await model.Post.create(req.body);
   return res.send('<script>alert("글 작성에 성공하였습니다.");location.href="/post/calendar";</script>');
 };
+
+exports.get_post = async (req, res, next) => {
+  return res.render("core.pug", {
+    pageTitle: "core",
+  });
+};
