@@ -2,10 +2,13 @@ const express = require("express");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const session = require("express-session");
+const passport = require("passport");
+const flash = require("connect-flash");
 
 dotenv.config();
 
 const { sequelize } = require("./models");
+
 // app set
 const app = express();
 app.set("port", process.env.PORT || 4000);
@@ -20,6 +23,7 @@ sequelize
     console.error(err);
   });
 
+// session middleware
 const sessionOption = {
   resave: false,
   saveUninitialized: false,
@@ -27,12 +31,15 @@ const sessionOption = {
   cookie: { httpOnly: true, secure: false },
 };
 app.use(session(sessionOption));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // middleware setting
 app.set("view engine", "pug");
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(flash());
 
 // router
 app.use("/favicon.ico", (req, res) => {

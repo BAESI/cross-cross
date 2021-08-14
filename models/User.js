@@ -23,11 +23,6 @@ module.exports = class User extends Sequelize.Model {
           allowNull: false,
           unique: true,
         },
-        cash: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          defaultValue: 0,
-        },
       },
       {
         sequelize,

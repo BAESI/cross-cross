@@ -1,8 +1,8 @@
 const model = require("../../models");
 const bcrypt = require("bcrypt");
 
-exports.get_join = async (req, res, next) => {
-  res.render("auth/join.pug");
+exports.get_join = (req, res, next) => {
+  return res.render("auth/join.pug");
 };
 
 exports.post_join = async (req, res, next) => {
@@ -26,9 +26,19 @@ exports.post_join = async (req, res, next) => {
         nickname,
         password: hash,
       });
-      return res.render("auth/login.pug", user);
+      // user는 로그인 이메일칸에 들어갈 예정
+      res.send('<script>alert("회원가입에 성공하였습니다."); location.href="/auth/login";</script>', user);
     }
   } catch (e) {
     return next(e);
   }
+};
+
+exports.get_login = (req, res, next) => {
+  return res.render("auth/login.pug", { flashMessage: req.flash().error });
+};
+
+exports.post_login = async (req, res, next) => {
+  // 로그인 성공시 메인 페이지로 이동
+  return res.send('<script>alert("로그인에 성공하였습니다.");location.href="/";</script>');
 };
