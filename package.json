@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app",
-    "dev:server": "nodemon --exec babel-node init.js --delay 0.5",
+    "dev:server": "nodemon --exec babel-node app.js --delay 0.5",
     "dev:assets": "WEBPACK_ENV=development webpack -w"
   },
   "repository": {
@@ -27,6 +27,8 @@
     "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",
     "babel-node": "^0.0.1-security",
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
     "css-loader": "^5.2.4",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -35,6 +37,8 @@
     "morgan": "^1.10.0",
     "mysql2": "^2.3.0",
     "node-sass": "^5.0.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "postcss-loader": "^6.1.1",
     "pug": "^3.0.2",
     "sass-loader": "^11.0.1",
