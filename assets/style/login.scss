@@ -1,0 +1,79 @@
+@import 'keyframes.scss';
+
+.main-login {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.login-main_column {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 60%;
+		animation: viewPortOpening 0.5s ease;
+
+		.login-img_container {
+			margin-bottom: 50px;
+			img {
+				width: 600px;
+				height: 200px;
+			}
+		}
+
+		.login-form {
+			display: flex;
+			flex-direction: column;
+			input {
+				width: 300px;
+				border-radius: 5px;
+				margin-bottom: 5px;
+				box-shadow: none;
+				font-size: $inputSize;
+				padding: 3px 5px;
+				border: none;
+				background-color: gainsboro;
+				text-align: center;
+				&:focus {
+					outline: none;
+				}
+				&:hover {
+					background-color: white;
+				}
+				&:nth-child(3) {
+					background-color: $mainColor1;
+					color: white;
+					&:hover {
+						background-color: $buttonReaction2;
+					}
+				}
+			}
+		}
+
+		button {
+			background-color: $mainColor3;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			width: 300px;
+			font-size: $inputSize;
+			padding: 3px 5px;
+			&:hover {
+				background-color: $buttonReaction1;
+				color: white;
+			}
+		}
+	}
+}
+
+#login-bg {
+	position: absolute;
+	z-index: -2;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}

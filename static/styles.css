@@ -1,3 +1,169 @@
 * {
-  background-color: red; }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+@-webkit-keyframes viewPortOpening {
+  0% {
+    opacity: 0;
+    transform: translateX(150px); }
+  60% {
+    opacity: 1;
+    transform: translateX(-40px); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes viewPortOpening {
+  0% {
+    opacity: 0;
+    transform: translateX(150px); }
+  60% {
+    opacity: 1;
+    transform: translateX(-40px); }
+  100% {
+    transform: translateX(0); } }
+
+.main-login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .main-login .login-main_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    -webkit-animation: viewPortOpening 0.5s ease;
+            animation: viewPortOpening 0.5s ease; }
+    .main-login .login-main_column .login-img_container {
+      margin-bottom: 50px; }
+      .main-login .login-main_column .login-img_container img {
+        width: 600px;
+        height: 200px; }
+    .main-login .login-main_column .login-form {
+      display: flex;
+      flex-direction: column; }
+      .main-login .login-main_column .login-form input {
+        width: 300px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        box-shadow: none;
+        font-size: 18px;
+        padding: 3px 5px;
+        border: none;
+        background-color: gainsboro;
+        text-align: center; }
+        .main-login .login-main_column .login-form input:focus {
+          outline: none; }
+        .main-login .login-main_column .login-form input:hover {
+          background-color: white; }
+        .main-login .login-main_column .login-form input:nth-child(3) {
+          background-color: #97c11e;
+          color: white; }
+          .main-login .login-main_column .login-form input:nth-child(3):hover {
+            background-color: #1cac7a; }
+    .main-login .login-main_column button {
+      background-color: #8cd2f2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 300px;
+      font-size: 18px;
+      padding: 3px 5px; }
+      .main-login .login-main_column button:hover {
+        background-color: #00a0ff;
+        color: white; }
+
+#login-bg {
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; }
+
+@-webkit-keyframes viewPortOpening {
+  0% {
+    opacity: 0;
+    transform: translateX(150px); }
+  60% {
+    opacity: 1;
+    transform: translateX(-40px); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes viewPortOpening {
+  0% {
+    opacity: 0;
+    transform: translateX(150px); }
+  60% {
+    opacity: 1;
+    transform: translateX(-40px); }
+  100% {
+    transform: translateX(0); } }
+
+.join-logo {
+  width: 500px;
+  height: 168px; }
+
+.main-join {
+  -webkit-animation: viewPortOpening 0.5s ease;
+          animation: viewPortOpening 0.5s ease;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .main-join .join-main_column {
+    background: #fdce8f;
+    justify-content: space-around;
+    border-radius: 20px;
+    display: flex;
+    height: 60%;
+    align-items: center;
+    width: 40%; }
+    .main-join .join-main_column button {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: none;
+      background-color: #97c11e;
+      transition: all 0.5s ease;
+      color: white;
+      margin-left: 30px; }
+      .main-join .join-main_column button:hover {
+        width: 150px;
+        background-color: #1cac7a;
+        font-size: 25px;
+        font-weight: bold;
+        height: 150px; }
+    .main-join .join-main_column form {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .main-join .join-main_column form input {
+        width: 100%;
+        margin-bottom: 4px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: gainsboro; }
+        .main-join .join-main_column form input:focus {
+          outline: none; }
+        .main-join .join-main_column form input:hover {
+          background-color: white; }
+        .main-join .join-main_column form input:nth-child(5) {
+          margin-top: 10px;
+          background-color: #8cd2f2;
+          color: white;
+          transition: all 0.5s ease; }
+          .main-join .join-main_column form input:nth-child(5):hover {
+            background-color: #00a0ff;
+            font-size: 19px; }
 

@@ -33,7 +33,6 @@ const sessionOption = {
 app.use(session(sessionOption));
 app.use(passport.initialize());
 app.use(passport.session());
-
 // middleware setting
 app.set("view engine", "pug");
 app.use("/static", express.static("static"));
