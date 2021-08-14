@@ -29,6 +29,10 @@ const sessionOption = {
 app.use(session(sessionOption));
 
 // middleware setting
+<<<<<<< HEAD
+=======
+app.set("view engine", "pug");
+>>>>>>> 0372f0769069864350744aa810a0276ae96eec88
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -37,6 +41,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/favicon.ico", (req, res) => {
   res.status(204);
 });
+<<<<<<< HEAD
+=======
+const authRouter = require("./controllers/auth");
+app.use("/auth", authRouter);
+>>>>>>> 0372f0769069864350744aa810a0276ae96eec88
 
 // 404
 app.use((req, res, next) => {
