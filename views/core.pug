@@ -9,13 +9,128 @@ block content2
                 .condition_box_header
                     h5 조건 선택
                     h5.condition_box_header_date 2021년 8월 14일
-                h5.search_option1 출발 공항
-                h5.search_option2 도착 공항
+                h5.search_option1
+                    select(name='depart-airport')
+                        option(value="") 출발 공항
+                        option(value="incheon") 인천 국제 공항
+                        option(value="kimpo") 김포 공항
+                        option(value="narita") 나리타 국제 공항
+                h5.search_option2
+                    select(name='apart-airport')
+                        option(value="") 도착 공항
+                        option(value="incheon") 인천 국제 공항
+                        option(value="kimpo") 김포 공항
+                        option(value="narita") 나리타 국제 공항
             .core-calendar.calendar
-
+                .item.item-day
+                    span 일
+                .item.item-day
+                    span 월
+                .item.item-day
+                    span 화
+                .item.item-day
+                    span 수
+                .item.item-day
+                    span 목
+                .item.item-day
+                    span 금
+                .item.item-day
+                    span 토
+                .item.item-num
+                    .spbox
+                        span 1
+                .item.item-num
+                    .spbox
+                        span 2
+                .item.item-num
+                    .spbox
+                        span 3
+                .item.item-num
+                    .spbox
+                        span 4
+                .item.item-num.activation
+                    .spbox
+                        span 5
+                .item.item-num
+                    .spbox
+                        span 6
+                .item.item-num
+                    .spbox
+                        span 7
+                .item.item-num
+                    .spbox
+                        span 8
+                .item.item-num
+                    .spbox
+                        span 9
+                .item.item-num
+                    .spbox
+                        span 10
+                .item.item-num
+                    .spbox
+                        span 11
+                .item.item-num
+                    .spbox
+                        span 12
+                .item.item-num
+                    .spbox
+                        span 13
+                .item.item-num
+                    .spbox
+                        span 14
+                .item.item-num
+                    .spbox
+                        span 15
+                .item.item-num
+                    .spbox
+                        span 16
+                .item.item-num
+                    .spbox
+                        span 17
+                .item.item-num
+                    .spbox
+                        span 18
+                .item.item-num
+                    .spbox
+                        span 19
+                .item.item-num
+                    .spbox
+                        span 20
+                .item.item-num
+                    .spbox
+                        span 21
+                .item.item-num
+                    .spbox
+                        span 22
+                .item.item-num
+                    .spbox
+                        span 23
+                .item.item-num
+                    .spbox
+                        span 24
+                .item.item-num
+                    .spbox
+                        span 25
+                .item.item-num
+                    .spbox
+                        span 26
+                .item.item-num
+                    .spbox
+                        span 27
+                .item.item-num
+                    .spbox
+                        span 28
+                .item.item-num
+                    .spbox
+                        span 29
+                .item.item-num
+                    .spbox
+                        span 30
+                .item.item-num
+                    .spbox
+                        span 31
         .core-right_column.core-column
-            
-
+        
             .register-button
                 <i class="fas fa-plus"></i>
             .content-list
@@ -32,6 +147,7 @@ block content2
                         h5.aparture 도착시간
                     h5.airport 공항
                     h5.feePerWeight 가격 정보
-                .content-select-button
-                    h3 선택하기
-                
+                a(href='')
+                    .content-select-button
+                        h3 선택하기
+    script(src="../static/calendar.js")

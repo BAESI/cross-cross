@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 
 exports.get_join = (req, res, next) => {
-	return res.render('join', {
+	return res.render('join.pug', {
 		pageTitle: 'join'
 	});
 };
@@ -38,47 +38,29 @@ exports.post_join = async (req, res, next) => {
 };
 
 exports.get_login = (req, res, next) => {
-	return res.render('login', {
+	return res.render('login.pug', {
 		pageTitle: 'login'
 	});
 };
 
 exports.post_login = async (req, res, next) => {
-<<<<<<< HEAD
 	// 로그인 성공시 메인 페이지로 이동
-	passport.authenticate('local', { session: false }, (authError, user, info) => {
+	passport.authenticate('local', (authError, user, info) => {
 		if (authError) {
+			console.error(authError);
 			return next(authError);
 		}
 		if (!user) {
-			return res.send(`<script>alert(${info.message});location.href="/";</script>`);
+			return res.send(`<script>alert(${info.message});location.href="#";</script>`);
 		}
 		return req.login(user, (loginError) => {
 			if (loginError) {
+				console.error(loginError);
 				return next(loginError);
 			}
-			return res.send('<script>alert("로그인에 성공하였습니다.");location.href="/";</script>');
+			return res.redirect('/post');
 		});
-	});
-=======
-  // 로그인 성공시 메인 페이지로 이동
-  passport.authenticate("local", (authError, user, info) => {
-    if (authError) {
-      console.error(authError);
-      return next(authError);
-    }
-    if (!user) {
-      return res.send(`<script>alert(${info.message});location.href="#";</script>`);
-    }
-    return req.login(user, (loginError) => {
-      if (loginError) {
-        console.error(loginError);
-        return next(loginError);
-      }
-      return res.redirect("/post");
-    });
-  })(req, res, next);
->>>>>>> 56809ea327348e245846ae5938282d8a606d795f
+	})(req, res, next);
 };
 
 exports.get_logout = async (req, res, next) => {
