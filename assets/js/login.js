@@ -5,7 +5,7 @@ const viewPorts = {
 	height: window.innerHeight
 };
 // const colorSet = ['#97c11e', '#fdce8f', '#8cd2f2'];'
-const colorSet = ['#97c11e', '#8cd2f2'];
+const colorSet = ['#fdce8f', '#8cd2f2'];
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particlesArray = [];
