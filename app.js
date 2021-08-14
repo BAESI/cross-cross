@@ -29,6 +29,7 @@ const sessionOption = {
 app.use(session(sessionOption));
 
 // middleware setting
+app.set("view engine", "pug");
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -37,6 +38,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/favicon.ico", (req, res) => {
   res.status(204);
 });
+const authRouter = require("./controllers/auth");
+app.use("/auth", authRouter);
 
 // 404
 app.use((req, res, next) => {
